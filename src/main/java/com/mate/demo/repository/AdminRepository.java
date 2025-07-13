@@ -1,0 +1,11 @@
+package com.mate.demo.repository;
+
+import com.mate.demo.entity.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface AdminRepository extends JpaRepository<Admin, Long> {
+    Optional<Admin> findByEmail(String email);
+    boolean existsByAdminCode(String adminCode);
+}
